@@ -952,7 +952,8 @@ Oryginalny samouczek, w formacie PDF, jest dostępny poprzez własny link DOI ja
 [github.com/DCS-training/ShinyTutorial](https://github.com/DCS-training/ShinyTutorial)
 
 | 
-Wszystkie elementy niezbędne dla samouczka po Polsku, jak i dla przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  [github.com/DCS-training/ShinyTutorial](https://github.com/AndrzejRomaniuk/ShinySamouczek)
+Wszystkie elementy niezbędne dla samouczka po Polsku, jak i dla przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  
+[github.com/AndrzejRomaniuk/ShinySamouczek](https://github.com/AndrzejRomaniuk/ShinySamouczek)
 
 | 
 | Andrzej A. Romaniuk
