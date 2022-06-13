@@ -1,9 +1,3 @@
-#Instalacja wymaganych bibliotek
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("shiny")) install.packages("shiny")
-if (!require("DT")) install.packages("DT")
-if (!require("shinythemes")) install.packages("shinythemes")
-
 #Wczytywnanie wymaganych bibliotek
 library(ggplot2)
 library(shiny)
