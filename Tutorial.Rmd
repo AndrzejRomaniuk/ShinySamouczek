@@ -2,7 +2,7 @@
 title: "Projektowanie prostych aplikacji w R przy użyciu SHINY"
 author: 
   - Andrzej A. Romaniuk^[UoE, Andrzej.Romaniuk@ed.ac.uk, NMS, A.Romaniuk@nms.ac.uk]
-  - Napisane dla CDCS UoE^[https://doi.org/10.5281/zenodo.5705151] ; Tłumaczenie dla warsztatów CAA Polska
+  - Napisane dla CDCS UoE^[https://doi.org/10.5281/zenodo.5705151] ; Tłumaczenie dla warsztatów CAA Polska^[https://pl.caa-international.org/caa-polska-forum-gis-uw-2022/]
 date: 27.05.22
 output: 
   pdf_document:
@@ -25,13 +25,13 @@ knitr::opts_chunk$set(echo = TRUE)
 \end{center}
 
 
-```{r fig.align="center", figures-side, fig.show="hold", echo=FALSE, out.height = '10%'}
+```{r fig.align="center", figures-side, fig.show="hold", echo=FALSE, out.height = '8%'}
 knitr::include_graphics("visual/UoELogo.jpg")
 knitr::include_graphics("visual/DCS.jpg")
 knitr::include_graphics("visual/shiny.png")
 ```
 
-```{r fig.align="center", fig.show="hold", echo=FALSE, out.width = '100%'}
+```{r fig.align="center", fig.show="hold", echo=FALSE, out.width = '95%'}
 knitr::include_graphics("visual/CAAForum.jpg")
 ```
 
@@ -95,8 +95,7 @@ Samouczek kończy się krótkim omówieniem kluczowych sposobów udostępniania 
 **Wymagania, poziom umiejętności:** 
 
 | 
-Ten samouczek zakłada, że znasz już podstawy kodowania w R. Szczególnie ważne dla zrozumienia, jak działa Shiny, jest wiedza, jak definiuje się nowe funkcje w R i jakie relacje mogą zachodzić pomiędzy funkcjami (np. zagnieżdżenie jednej funkcji w drugiej). Ponieważ głównym celem aplikacji Shiny jest tworzenie wyników na podstawie danych wprowadzanych przez użytkownika, ważne jest również doświadczenie w organizowaniu oraz pracy z danymi, jak i wizualizacji wyników tej pracy, w przy pomocy R. Jeśli chcesz najpierw zapoznać się z R, możesz zajrzeć do zasobów dostępnych na stronie GitHub CDCS [tutaj](https://github.com/DCS-training) (po Angielsku).
-
+Ten samouczek zakłada, że znasz już podstawy kodowania w R. Szczególnie ważne dla zrozumienia, jak działa Shiny, jest wiedza, jak definiuje się nowe funkcje w R i jakie relacje mogą zachodzić pomiędzy funkcjami (np. zagnieżdżenie jednej funkcji w drugiej). Ponieważ głównym celem aplikacji Shiny jest tworzenie wyników na podstawie danych wprowadzanych przez użytkownika, ważne jest również doświadczenie w organizowaniu oraz pracy z danymi, jak i wizualizacji wyników tej pracy, w przy pomocy R. Jeśli chcesz najpierw zapoznać się z R, możesz zajrzeć do zasobów dostępnych na stronie GitHub CDCS [tutaj](https://github.com/DCS-training) (po Angielsku), lub materiałów dostępnych na stronie conferencji CAA Poland [tutaj](https://pl.caa-international.org/caa2022-warsztatyr/?fbclid=IwAR1UHVECuZ7GSFe9Raozf6HLQ42mbxAv99NfIFWaLlK9BN3IjISqfL6MLMc) (Polski i Angielski).
 
 | 
 **Wymagania, oprogramowanie:** 
@@ -124,7 +123,7 @@ ggplot2        # Deklaratywne tworzenie grafiki
 **Przykładowy zbiór danych oraz kod:** 
 
 | 
-W samouczku użyto zbioru danych potocznie znanego jako *Iris*. Zawiera on cztery kolumny z pomiarami w cm, po dwa (długość/szerokość) dla płatków korony oraz przedziałów kielicha trzech oddzielnych gatunków irysów. Zbiór jest powszechnie używany w nauczaniu, jest też zawarty w przykładowych zbiorach danych RStudio. Ponieważ celem jest zrozumienie, jak stworzyć funkcjonalną aplikację, przykłady kodu koncentrują się na eksploracji zestawu danych za pomocą dostarczonych danych liczbowych (4 pomiary) oraz danych kategorycznych (gatunkowych). Przykład aplikacji, w tym pliki do wygenerowania samouczka PDF, można uzyskać [tutaj](https://github.com/DCS-training/ShinyTutorial) (wersja po Angielsku) lub [tutaj]() (wersja po Polsku). 
+W samouczku użyto zbioru danych potocznie znanego jako *Iris*. Zawiera on cztery kolumny z pomiarami w cm, po dwa (długość/szerokość) dla płatków korony oraz przedziałów kielicha trzech oddzielnych gatunków irysów. Zbiór jest powszechnie używany w nauczaniu, jest też zawarty w przykładowych zbiorach danych RStudio. Ponieważ celem jest zrozumienie, jak stworzyć funkcjonalną aplikację, przykłady kodu koncentrują się na eksploracji zestawu danych za pomocą dostarczonych danych liczbowych (4 pomiary) oraz danych kategorycznych (gatunkowych). Przykład aplikacji, w tym pliki do wygenerowania samouczka PDF, można uzyskać [tutaj](https://github.com/DCS-training/ShinyTutorial) (wersja po Angielsku) lub [tutaj](https://github.com/AndrzejRomaniuk/ShinySamouczek) (wersja po Polsku). 
 
 | 
 
@@ -142,7 +141,7 @@ knitr::include_graphics("visual/Starting.jpg")
 ```
 
 |
-Po zainstalowaniu wymaganych bibliotek można utworzyć nową aplikację Shiny, rozpoczynając kodowanie w istniejącym pustym pliku R lub przechodząc do opcji *Plik > Nowy plik > Shiny Web App...*, aby utworzyć nowy plik.
+Po zainstalowaniu wymaganych bibliotek można utworzyć nową aplikację Shiny, rozpoczynając kodowanie w istniejącym pustym pliku R lub przechodząc do opcji *File > New File > Shiny Web App...*, aby utworzyć nowy plik.
 
 |
 ```{r fig.align="center", fig.show="hold",out.width = '70%', fig.cap = "okno wyskakujące podczas tworzenia nowego pliku", echo=FALSE}
@@ -947,10 +946,11 @@ Sam dokument PDF został zbudowany w RStudio (wersja 1.3.1073; R wersja 4.02), p
 Naklejka z logo Shiny, prezentowana na pierwszej stronie, pobrana została z repozytorium  [hex-stickers](https://github.com/rstudio/hex-stickers/tree/master/PNG), stworzonym specjalnie dla reklamowania R i powiązanych bibliotek oraz rozwiązań sieciowych.
 
 | 
-Oryginalny samouczek, w formacie PDF, jest dostępny poprzez własny link DOI:  [https://doi.org/10.5281/zenodo.5705151](https://doi.org/10.5281/zenodo.5705151)
+Oryginalny samouczek, w formacie PDF, jest dostępny poprzez własny link DOI jak i oryginalne repozytorium an GitHub:  [https://doi.org/10.5281/zenodo.5705151](https://doi.org/10.5281/zenodo.5705151)
+[github.com/DCS-training/ShinyTutorial](https://github.com/DCS-training/ShinyTutorial)
 
 | 
-Wszystkie elementy niezbędne dla samouczka i przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  [github.com/DCS-training/ShinyTutorial](https://github.com/DCS-training/ShinyTutorial)
+Wszystkie elementy niezbędne dla samouczka po Polsku, jak i przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  [github.com/DCS-training/ShinyTutorial](https://github.com/AndrzejRomaniuk/ShinySamouczek)
 
 | 
 | Andrzej A. Romaniuk
