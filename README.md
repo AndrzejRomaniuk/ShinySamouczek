@@ -24,6 +24,7 @@ Naklejka z logo Shiny, prezentowana na pierwszej stronie, pobrana zostala z repo
  └── main
      ├── Tutorial.Rmd
      ├── Tutorial.pdf
+     ├── LICENSE.md 
      ├── README.md
      ├── visual
      │   ├── AppStructure.jpg
