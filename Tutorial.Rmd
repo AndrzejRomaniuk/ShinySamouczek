@@ -36,6 +36,7 @@ knitr::include_graphics("visual/CAAForum.jpg")
 ```
 
 \renewcommand{\footnoterule}{\vfill\kern -3pt \hrule width 1\columnwidth \kern 2.6pt}
+\def\figurename{Fig.}
 
 \pagebreak
 \begin{center}
@@ -78,7 +79,7 @@ Po pierwsze, zobacz [*Zanim zaczniesz*](#beforestart) aby sprawdzić, które bib
 Ze względu na znaczenie teorii w zrozumieniu wewnętrznej struktury i działania aplikacji internetowej, samouczek rozpoczyna się od krótkiego opisu kluczowych funkcji aplikacji internetowych i ich wzajemnych relacji ([*Jak działają aplikacje internetowe?*](#howappswork)). Następnie samouczek wyjaśnia, w jaki sposób ogólna struktura aplikacji jest odzwierciedlana w kluczowych funkcjach Shiny ([*Shiny: struktura aplikacji*](#appstructure)). Po zrozumieniu podstawowej struktury samouczek przechodzi do wyjaśnienia każdego etapu tworzenia aplikacji, od zaprojektowania interfejsu użytkownika ([*Shiny: interfejs użytkownika*](#designinglayout)) i uzyskania danych wejściowych ([*Shiny: uzyskiwanie danych wejściowych*](#gettinginput)), poprzez przetwarzanie danych wejściowych w celu uzyskania danych wyjściowych ([*Shiny: serwer i kalkulowanie danych wyjściowych*](#renderingoutput)) i wyświetlenie ich w interfejsie użytkownika ([*Shiny: wyświetlanie danych wyjściowych*](#displayingoutput)), kończące się omówieniem przykładu ukończonej, funkcjonalnej aplikacji ([*Shiny: przykład działającej aplikacji*](#functionalexample)). Jak w prosty sposób zmienić wygląd aplikacji poprzez dodanie motywu z biblioteki Shinythemes ([*Shiny: estetyka z Shinythemes*](#customization)) i jak wprowadzić tekst do aplikacji ([*Shiny: pisanie w aplikacji*](#customization2)) będą też omówione przy okazji wyjaśniania budowy interfejsu użytkownika.
 
 |
-Samouczek kończy się krótkim omówieniem kluczowych sposobów udostępniania aplikacji zbudowanych przy użyciu Shiny ([*Udostępnianie aplikacji*](#Publishing)).Jeśli jesteś zainteresowany opanowaniem Shiny w większym stopniu, zobacz [*Uwagi końcowe*](#remarks) i [*Dalsza nauka*](#furtherreading). Pierwsza strona pokrótce omawia możliwości dalszego rozwoju. Druga zawiera linki do wszystkich odpowiednich witryn, w tym samouczków o różnym stopniu złożoności, prezentacji i arkuszy referencyjnych, kończąc na książkach z dogłębną wiedzą na temat tworzenia złożonych aplikacji i udostępniania ich online.
+Samouczek kończy się krótkim omówieniem kluczowych sposobów udostępniania aplikacji zbudowanych przy użyciu Shiny ([*Udostępnianie aplikacji*](#Publishing)).Jeśli jesteś zainteresowany opanowaniem Shiny w większym stopniu, zobacz strony [*Uwagi końcowe*](#remarks) i [*Dalsza nauka*](#furtherreading). Pierwsza pokrótce omawia możliwości dalszego rozwoju. Druga zawiera linki do wszystkich odpowiednich witryn, w tym samouczków o różnym stopniu złożoności, prezentacji i arkuszy referencyjnych, kończąc na książkach z dogłębną wiedzą na temat tworzenia złożonych aplikacji i udostępniania ich online.
 
 
 
@@ -95,7 +96,7 @@ Samouczek kończy się krótkim omówieniem kluczowych sposobów udostępniania 
 **Wymagania, poziom umiejętności:** 
 
 | 
-Ten samouczek zakłada, że znasz już podstawy kodowania w R. Szczególnie ważne dla zrozumienia, jak działa Shiny, jest wiedza, jak definiuje się nowe funkcje w R i jakie relacje mogą zachodzić pomiędzy funkcjami (np. zagnieżdżenie jednej funkcji w drugiej). Ponieważ głównym celem aplikacji Shiny jest tworzenie wyników na podstawie danych wprowadzanych przez użytkownika, ważne jest również doświadczenie w organizowaniu oraz pracy z danymi, jak i wizualizacji wyników tej pracy, w przy pomocy R. Jeśli chcesz najpierw zapoznać się z R, możesz zajrzeć do zasobów dostępnych na stronie GitHub CDCS [tutaj](https://github.com/DCS-training) (po Angielsku), lub materiałów dostępnych na stronie conferencji CAA Poland [tutaj](https://pl.caa-international.org/caa2022-warsztatyr/?fbclid=IwAR1UHVECuZ7GSFe9Raozf6HLQ42mbxAv99NfIFWaLlK9BN3IjISqfL6MLMc) (Polski i Angielski).
+Ten samouczek zakłada, że znasz już podstawy kodowania w R. Szczególnie ważna dla zrozumienia, jak działa Shiny, jest wiedza, jak definiuje się nowe funkcje w R i jakie relacje mogą zachodzić pomiędzy funkcjami (np. zagnieżdżenie jednej funkcji w drugiej). Ponieważ głównym celem aplikacji Shiny jest tworzenie wyników na podstawie danych wprowadzanych przez użytkownika, ważne jest również doświadczenie w organizowaniu oraz pracy z danymi, jak i wizualizacji wyników tej pracy, przy pomocy R. Jeśli chcesz najpierw zapoznać się z R, możesz zajrzeć do zasobów dostępnych na stronie GitHub CDCS [tutaj](https://github.com/DCS-training) (po Angielsku), lub materiałów dostępnych na stronie conferencji CAA Poland [tutaj](https://pl.caa-international.org/caa2022-warsztatyr/?fbclid=IwAR1UHVECuZ7GSFe9Raozf6HLQ42mbxAv99NfIFWaLlK9BN3IjISqfL6MLMc) (Polski i Angielski).
 
 | 
 **Wymagania, oprogramowanie:** 
@@ -141,7 +142,7 @@ knitr::include_graphics("visual/Starting.jpg")
 ```
 
 |
-Po zainstalowaniu wymaganych bibliotek można utworzyć nową aplikację Shiny, rozpoczynając kodowanie w istniejącym pustym pliku R lub przechodząc do opcji *File > New File > Shiny Web App...*, aby utworzyć nowy plik.
+Po zainstalowaniu wymaganych bibliotek można utworzyć nową aplikację Shiny, rozpoczynając kodowanie w istniejącym pustym pliku R, lub przechodząc do opcji *File > New File > Shiny Web App...*, aby utworzyć nowy plik.
 
 |
 ```{r fig.align="center", fig.show="hold",out.width = '70%', fig.cap = "okno wyskakujące podczas tworzenia nowego pliku", echo=FALSE}
@@ -149,7 +150,7 @@ knitr::include_graphics("visual/NewShinyWebApp.jpg")
 ```
 |
 
-Jeśli zdecydujesz się utworzyć nowy plik za pomocą *Shiny Web App...*, najpierw zostaniesz zapytany, gdzie chcesz utworzyć aplikację i czy w jednym lub dwóch skryptach R. Jeżeli chodzi o podział jeden/dwa pliki, to zostanie to wyjaśnione na początku tego samouczka, na razie sugeruję zacząć od jednego pliku. Po wybraniu opcji, nazwaniu nowej aplikacji i określeniu jej lokalizacji, zostanie utworzony nowy skrypt R. Będzie zawierał przykładowy kod bardzo prostej, przykładowej aplikacji, który można całkowicie usunąć lub użyć go jako bazę do dalszej pracy.
+Jeśli zdecydujesz się utworzyć nowy plik za pomocą *Shiny Web App...*, najpierw zostaniesz zapytany, gdzie chcesz utworzyć aplikację i czy w jednym, czy w dwóch skryptach R. Jeżeli chodzi o podział jeden/dwa pliki, to zostanie to wyjaśnione na początku tego samouczka; na razie sugeruję zacząć od jednego pliku. Po wybraniu opcji, nazwaniu nowej aplikacji i określeniu jej lokalizacji, zostanie utworzony nowy skrypt R. Będzie zawierał przykładowy kod bardzo prostej, przykładowej aplikacji, który można całkowicie usunąć, lub użyć go jako bazę do dalszej pracy.
 
 
 \pagebreak
@@ -165,9 +166,9 @@ knitr::include_graphics("visual/Difference.jpg")
 
 |
 
-W przypadku rozpoczęcia z całkowicie pustym plikiem R, opcje wyświetlania pliku będą początkowo takie same, jak w przypadku każdego innego pliku skryptu R. Jednak po uwzględnieniu kluczowych funkcji aplikacji Shiny (wyjaśnionych w dalszej części samouczka) i zapisaniu pliku, RStudio zaktualizuje odpowiednie opcje w prawym górnym rogu wyświetlanego pliku. Przycisk „Uruchom” zmieni się w przycisk „Uruchom aplikację”. Wyniki działania aplikacji, zamiast zapisania w środowisku, zostaną wyświetlone w osobnym oknie (RStudio symuluje środowisko serwera WWW).
+W przypadku rozpoczęcia pracy z całkowicie pustym plikiem R, opcje wyświetlania pliku będą początkowo takie same, jak w przypadku każdego innego pliku skryptu R. Jednak po uwzględnieniu kluczowych funkcji aplikacji Shiny (wyjaśnionych w dalszej części samouczka) i zapisaniu pliku, RStudio zaktualizuje odpowiednie opcje w prawym górnym rogu wyświetlanego pliku. Przycisk „Uruchom” zmieni się w przycisk „Uruchom aplikację”. Wyniki działania aplikacji, zamiast zapisania w środowisku, zostaną wyświetlone w osobnym oknie (RStudio symuluje środowisko serwera WWW).
 
-Dodatkowo wyświetlony zostanie również przycisk „opublikuj aplikację bądź dokument” (niebieski znak „oczka”). Umożliwia on publikowanie wyników Twojej pracy bezpośrednio do dedykowanych repozytoriów lub serwerów, o ile uprzednio skonfigurowałeś RStudio do pracy z nimi.
+Dodatkowo wyświetlony zostanie również przycisk „opublikuj aplikację bądź dokument” (niebieski znak „oczka”). Umożliwia on publikowanie wyników Twojej pracy bezpośrednio w dedykowanych repozytoriach lub serwerach, o ile uprzednio skonfigurowałeś RStudio do pracy z nimi.
 
 
 |
@@ -192,7 +193,7 @@ knitr::include_graphics("visual/AppStructure.jpg")
  
 Mimo że aplikacje internetowe mają różne kształty i formy, podstawowa struktura pozostaje taka sama.
 
-To, co my, użytkownicy, widzimy podczas uruchamiania aplikacji, nazywa się interfejsem użytkownika (ang. *User Interface*, w skrócie UI). Zapewnia on użytkownikowi możliwość interakcji z aplikacją. Przede wszystkim gromadzi dane wejściowe, na przykład za pomocą naciśniętych przycisków lub tekstu pisanego, i wyświetla wyniki uzyskanie na bazie tych danych, takie jak tabele lub wykresy. Obecnie najczęściej korzystamy z graficznego interfejsu użytkownika (GUI), ale istnieje wiele różnych podejść do interakcji użytkownika z aplikacją, od wyświetlania wierszy poleceń po wykorzystanie m.in. dźwięku (głosowy interfejs użytkownika, rozwiązanie dedykowane dla niedowidzących). Interfejs użytkownika można również rozumieć jako "przód"(*front-end*) aplikacji - *front-end programmer* to programiści zajmujący się specyficznie tą stroną aplikacji.
+To, co my, użytkownicy, widzimy podczas uruchamiania aplikacji, nazywa się interfejsem użytkownika (ang. *User Interface*, w skrócie UI). Zapewnia on użytkownikowi możliwość interakcji z aplikacją. Przede wszystkim gromadzi dane wejściowe ( za pomocą naciśniętych przycisków lub tekstu pisanego) i wyświetla wyniki uzyskanie na bazie tych danych, takie jak tabele lub wykresy. Obecnie najczęściej korzystamy z graficznego interfejsu użytkownika (GUI), ale istnieje wiele różnych podejść do interakcji użytkownika z aplikacją, od wyświetlania wierszy poleceń po wykorzystanie m.in. dźwięku (głosowy interfejs użytkownika, rozwiązanie dedykowane niedowidzącym). Interfejs użytkownika można również rozumieć jako "przód"(*front-end*) aplikacji - *front-end programmer* to programiści zajmujący się specyficznie tą stroną aplikacji.
 
 Jednak generowanie danych wyjściowych nie odbywa się w interfejsie użytkownika, ale po stronie serwera, „zaplecza" (*back-end*) aplikacji. Tutaj wszystkie żądania są przetwarzane zgodnie z zakodowanymi poleceniami, przy użyciu plików (np. zbiorów danych) zawartych już w aplikacji bądź dostarczonych przez użytkownika. Utworzone dane wyjściowe są następnie przekazywane z powrotem do interfejsu użytkownika w celu przekazania użytkownikowi. Gdy aplikacja jest uruchomiona, interfejs użytkownika i serwer stale komunikują się ze sobą. Za każdym razem, gdy dane wejściowe zmieniają się, serwer ponownie oblicza dane wyjściowe, a następnie wyświetla dane wyjściowe aktualizujące interfejs użytkownika.
 
@@ -247,7 +248,7 @@ shinyApp(
 |
 | 
 
-```{r fig.align="center", fig.show="hold",out.width = '80%',  fig.cap = "Po lewej - shemat układu z panelem bocznym; Po prawej - sformułowanie tego układu poprzez zagnieżdżanie odpowiednich elementów kodu", echo=FALSE}
+```{r fig.align="center", fig.show="hold",out.width = '75%',  fig.cap = "Po lewej - shemat układu z panelem bocznym; Po prawej - sformułowanie tego układu poprzez zagnieżdżanie odpowiednich elementów kodu", echo=FALSE}
 knitr::include_graphics("visual/SideLayout.jpg")
 ```
 
@@ -282,10 +283,10 @@ Kodowanie struktury interfejsu użytkownika jest z zasady podejściem dwuetapowy
 
 |
 
-Istnieją inne układy i typy paneli, które można wykorzystać podczas projektowania własnej aplikacji. Na przykład *flowLayout()* i *verticalLayout()* umożliwiają tworzenie aplikacji z wieloma panelami. Aby uzyskać jeszcze większą swobodę, *fluidRow()* i *fixedRow()* umożliwiają kodowanie w układzie siatki i dopasowywanie paneli w określonej pozycji. Wśród bardziej popularnych funkcji paneli *titlePanel()* i *headerPanel()* mogą być przydatne, jeśli chcemy wyświetlić nazwę aplikacji. Mogą też być zagnieżdżone przed ustaleniem właściwego układu. Alternatywą dla paska bocznego (tzn. panel dla zbierania danych wejściowych) może być *inputPanel()* lub *wellPanel()*. Technicznie, nowe elementy (np. przycisk bd) można dołączyć bez deklarowania utworzenia nowego panelu, dobrą praktyką jest jednak zebranie ich razem, najlepiej w tym samym panelu. Zobacz [tutaj](https://bookdown.org/weicheng/shinyTutorial/ui.html#layout) lub [tutaj](https://shiny.rstudio.com/articles/layout-guide.html), aby uzyskać dalsze wyjaśnienia i przykłady projektowania układu i zagnieżdżania w wymaganych panelach.
+Istnieją inne układy i typy paneli, które można wykorzystać podczas projektowania własnej aplikacji. Na przykład *flowLayout()* i *verticalLayout()* umożliwiają tworzenie aplikacji z wieloma panelami. Aby uzyskać jeszcze większą swobodę, *fluidRow()* i *fixedRow()* umożliwiają kodowanie w układzie siatki i dopasowywanie paneli w określonej pozycji. Wśród bardziej popularnych funkcji definiujących panele, *titlePanel()* i *headerPanel()* mogą być przydatne, jeśli chcemy wyświetlić nazwę aplikacji. Mogą też być zagnieżdżone przed ustaleniem właściwego układu. Alternatywą dla paska bocznego (tzn. panel dla zbierania danych wejściowych) może być *inputPanel()* lub *wellPanel()*. Technicznie, nowe elementy (np. przycisk bd) można dołączyć bez deklarowania utworzenia nowego panelu, dobrą praktyką jest jednak zebranie ich razem, najlepiej w tym samym panelu. Zobacz [tutaj](https://bookdown.org/weicheng/shinyTutorial/ui.html#layout) ,lub [tutaj](https://shiny.rstudio.com/articles/layout-guide.html), aby uzyskać dalsze wyjaśnienia i przykłady projektowania układu i zagnieżdżania w wymaganych panelach.
 
 
-```{r fig.align="center", fig.show="hold",out.width = '80%', fig.cap = "Po lewej - schemat układu składającego się z trzech zakładek; Po prawej - sformułowanie tego układu poprzez zagnieżdżanie odpowiednich elementów kodu", echo=FALSE}
+```{r fig.align="center", fig.show="hold",out.width = '75%', fig.cap = "Po lewej - schemat układu składającego się z trzech zakładek; Po prawej - sformułowanie tego układu poprzez zagnieżdżanie odpowiednich elementów kodu", echo=FALSE}
 knitr::include_graphics("visual/TabsetLayout.jpg")
 ```
 
@@ -325,7 +326,7 @@ knitr::include_graphics("visual/Customization.jpg")
 ```
 
 | 
-Jednym z łatwych sposobów dalszego dostosowywania estetyki aplikacji Shiny, bez wchodzenia w szczegóły kodowania w CSS, jest użycie biblioteki *shinythemes*. Zawiera ona ponad 15 różnych motywów, zmieniających paletę kolorów układu, rodzaj i rozmiar czcionki oraz drobne elementy stylistyczne (np. różnie wyglądające przyciski/pola wyboru). Aby użyć konkretnego motywu, wystarczy umieścić argument *shinytheme()* w funkcji *fluidpage()*, z zawartą w nim nazwą motywu. Jeśli nie masz pewności, którego motywu użyć, możesz zamiast tego dołączyć *themeSelector()* jako argument, co spowoduje wyświetlenie wyskakującego okienka ze wszystkimi motywami obecnymi po uruchomieniu. Więcej informacji o tej bibliotece można znaleźć [tutaj](https://rstudio.github.io/shinythemes/).
+Jednym z łatwych sposobów dalszego dostosowywania estetyki aplikacji Shiny, bez wchodzenia w szczegóły kodowania w CSS, jest użycie biblioteki *shinythemes*. Zawiera ona ponad 15 różnych motywów, zmieniających paletę kolorów układu, rodzaj i rozmiar czcionki oraz drobne elementy stylistyczne (np. różnie wyglądające przyciski/pola wyboru). Aby użyć konkretnego motywu, wystarczy umieścić argument *shinytheme()* w funkcji *fluidpage()* z zawartą w nim nazwą motywu. Jeśli nie masz pewności, którego motywu użyć, możesz zamiast tego dołączyć *themeSelector()* jako argument, co spowoduje wyświetlenie wyskakującego okienka ze wszystkimi motywami obecnymi po uruchomieniu. Więcej informacji o tej bibliotece można znaleźć [tutaj](https://rstudio.github.io/shinythemes/).
 
 | 
 ```{r eval=FALSE, echo=TRUE}
@@ -351,7 +352,7 @@ knitr::include_graphics("visual/TextExamples.jpg")
 ```
 
 | 
-Czasami możesz chcieć umieścić tekst pisany w samej aplikacji, na przykład wyjaśnić cel aplikacji bądź opisać, jak z niej prawidłowo korzystać.
+Czasami możesz chcieć umieścić tekst pisany w samej aplikacji, na przykład wyjaśnić cel aplikacji, bądź opisać, jak z niej prawidłowo korzystać.
 
 Można to łatwo zrobić za pomocą kilku różnych funkcji, omówionych [tutaj](https://shiny.rstudio.com/tutorial/written-tutorial/lesson2/). Ich nazwy nawiązują do funkcji w kodzie HTML. Podstawową funkcją  do osadzania prostych akapitów tekstu jest *p()*. W przypadku chęci osadzenia pogrubionego tekstu, można wykorzystać *strong()*, natomiast w przypadku kursywy *em()*. Jeśli ktoś chce wyświetlić tekst wejściowy tak, jak zostałby wyświetlony kod, można użyć *code()*. Inne często używane funkcje to *h1()* do *h4()*, powszechnie używane do tworzenia tytułów o różnych rozmiarach.
 
@@ -385,7 +386,7 @@ Widżety to zasadniczo elementy interaktywne każdej aplikacji, takie jak np. ok
 
 O ile możliwe argumenty do zdefiniowania różnią się między dostępnymi widżetami, wszystkie zaczynają się od argumentu określającego nazwę obiektu, który będzie przechowywał dane wejściowe (w przypadku funkcji bibliotecznych Shiny pod nazwą *inputId*), z możliwością zdefiniowania wyświetlanej nazwy widżetu pod argumentem *label*. W przypadku niektórych widżetów do poprawnego działania wystarczy zdefiniowanie tylko tych dwóch argumentów (np. *textInput*), podczas gdy inne wymagają dodatkowych informacji, na przykład dostępnych opcji lub wstępnie wybranej/domyślnej odpowiedzi (zwykle *value* lub *selected*).
 
-Wśród najlepszych praktyk przy dodawaniu widżetów i definiowaniu ich parametrów jest robienie tego z myślą o czytelności i porządku. Wszystkie widżety należy odpowiednio nazwać, aby wyraźnie przekazać użytkownikowi ich użyteczność. Po ułożeniu warto pamiętać, aby ustawić je w kolejności malejącej, tj. od wejścia kluczowego (np. definicja, jakie dane mają być przetwarzane) do wejścia definiującego drobne szczegóły (np. specyfika formatowania wykresów danych lub tabel).
+Dobrą praktyką przy dodawaniu widżetów i definiowaniu ich parametrów jest robienie tego z myślą o czytelności i porządku. Wszystkie widżety należy odpowiednio nazwać, aby wyraźnie przekazać użytkownikowi ich użyteczność. Przy układaniu warto pamiętać, aby ustawić je w kolejności malejącej, tj. od wejścia kluczowego (np. definicja, jakie dane mają być przetwarzane) do wejścia definiującego drobne szczegóły (np. specyfika formatowania wykresów danych lub tabel).
 
 \pagebreak
 \begin{center}
@@ -431,7 +432,7 @@ Wśród najlepszych praktyk przy dodawaniu widżetów i definiowaniu ich paramet
 | 
 Co zrobić, jeśli jakiś widżet jest potrzebny tylko w przypadku specyficznego wyboru w innym widżetcie?
 
-Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią określone warunki, możesz użyć funkcji *conditionalPanel()* do ustalenia panelu warunkowego. Dwa kluczowe argumenty do uwzględnienia to *warunek*, przy którym pojawi się dodatkowy widżet, oraz sam widżet. Na przykład *conditon = ("input.InputName = 2")* mówi nam, że obiekt z określonymi danymi uzyskanymi od użytkownika, tutaj nazwane *InputName*, musi być ustawione jako numeryczne 2, aby wywołać pojawienie się dodatkowego widżetu. Należy jednak pamiętać, że warunki są oceniane zgodnie z kodowaniem JavaScript, a nie R (np. *=* jako znak równości, kiedy *==* jest domyśnym znakiem w R), dlatego też wranek pojawia się w cudzysłowiu.
+Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią określone warunki, możesz użyć funkcji *conditionalPanel()* do ustalenia panelu warunkowego. Dwa kluczowe argumenty do uwzględnienia to *warunek*, przy którym pojawi się dodatkowy widżet, oraz sam widżet. Na przykład *conditon = ("input.InputName = 2")* mówi nam, że obiekt z określonymi danymi uzyskanymi od użytkownika (nazwane *InputName*) musi musi równać się numerycznej 2, by dodatkowy widżet się  pojawił. Należy jednak pamiętać, że warunki są oceniane zgodnie z kodowaniem JavaScript, a nie R (np. *=* jako znak równości, kiedy *==* jest domyśnym znakiem tego typu w R). Dlatego też warunek pojawia się w cudzysłowiu.
 
 | 
 ```{r eval=FALSE, echo=TRUE}
@@ -474,19 +475,19 @@ Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią okr
 |
 | 
 
-Jak już było omówione w [*Shiny: struktura aplikacji*](#appstructure), każda zdefiniowana funkcja serwera musi zawierać dwa elementy, jeden do uzyskania danych wejściowych z interfejsu użytkownika, zwany po prostu *input*, a drugi używany do przechowywania wszystkich renderowanych obiektów, o nazwie *output*. W rzeczywistości istnieje trzeci możliwy argument, zwany *server*, ale jest on wymagany do dodatkowego zdefiniowania relacji serweru z UI, całkowicie niepotrzebny przy pisaniu prostszych aplikacji.
+Jak już było omówione w [*Shiny: struktura aplikacji*](#appstructure), każda zdefiniowana funkcja serwera musi zawierać dwa elementy, jeden do uzyskania danych wejściowych z interfejsu użytkownika, zwany po prostu *input*, drugi używany do przechowywania wszystkich renderowanych obiektów, o nazwie *output*. W rzeczywistości istnieje trzeci możliwy argument, zwany *server*, ale jest on wymagany do dodatkowego zdefiniowania relacji serweru z UI; całkowicie niepotrzebny przy pisaniu prostszych aplikacji.
 
 | 
-Nawiasy {} zawierają cały kod języka R definiujący wewnętrzną logikę aplikacji, dodatkowo wpisany w funkcje służące do przechwytywania („renderowania”) i zapisu wyników tej pracy. Na przykład funkcja *renderPlot()* będzie w stanie przechwycić grafikę stworzoną np. dzięki bibliotece ggplot. *renderTable()* przechwyci większość formatów tabel, przy czym *renderDataTable()* jest zaawansowaną funkcją, dla bardziej interaktywnych wyników. Wydruki z konsoli, takie jak dostarczone przez m.in. funkcję *summary()*, mogą być uchycone przez *renderPrint()*, podczas gdy zwykłe wyniki tekstowe będzie łatwo zapisać dzięki funkcji *renderText()*. Warto jednak zauważyć, że w przypadku tekstu badź druku z konsoli wyrażenie w R musi być dodatkowo umieszczone w nawiasach {}, np. *renderPrint({"Wyrażenie_do_oceny"})*. W ramach podstawowej biblioteki *Shiny* znajduje się funkcja renderująca obrazy (*renderImage()*, albo wczytane przez przez użytkownika, wczytane z zewnętrznej strony internetowej lub przechowywane na serwerze) a nawet elementy interfejsu użytkownika (*renderUI()*).
+Nawiasy {} zawierają cały kod języka R definiujący wewnętrzną logikę aplikacji, dodatkowo wpisany w funkcje służące do przechwytywania („renderowania”) i zapisu wyników tej pracy. Na przykład funkcja *renderPlot()* będzie w stanie przechwycić grafikę stworzoną np. dzięki bibliotece ggplot. *renderTable()* przechwyci większość formatów tabel, przy czym *renderDataTable()* jest zaawansowaną funkcją, dla bardziej interaktywnych wyników. Wydruki z konsoli, takie jak dostarczone przez m.in. funkcję *summary()*, mogą być uchycone przez *renderPrint()*, podczas gdy zwykłe wyniki tekstowe będzie łatwo zapisać dzięki funkcji *renderText()*. Warto jednak zauważyć, że w przypadku tekstu bądź druku z konsoli wyrażenie w R musi być dodatkowo umieszczone w nawiasach {}, np. *renderPrint({"Wyrażenie_do_oceny"})*. W ramach podstawowej biblioteki *Shiny* znajduje się funkcja renderująca obrazy (*renderImage()*; obrazy mogą być wczytane przez użytkownika, ściągnięte z zewnętrznej strony internetowej poprzez URL, lub przechowywane na serwerze, a nawet elementy interfejsu użytkownika (*renderUI()*).
 
 | 
-Konkretne dane wejściowe są wydzielnae z ogólnego obiektu *input* za pomocą operatora dolara i ustalnej nazwy dla specyficznych danych, w podobny sposób jak np. wydziela się konkrente koluny ze bioru  danych. Na przykład, jeśli dane przy wprowadzaniu tekstu zostały zdefiniowane jako *textInput1*, można je wydzielić na poziomie serwera za pomocą *input$textInput1*.
+Konkretne dane wejściowe są wydzielane z ogólnego obiektu *input* za pomocą znaku (operatora) dolara i ustalonej nazwy dla specyficznych danych, w podobny sposób jak np. wydziela się konkretne kolumny ze zbioru  danych. Na przykład, jeśli dane przy wprowadzaniu tekstu zostały zdefiniowane jako *textInput1*, można je wydzielić na poziomie serwera za pomocą *input$textInput1*.
 
 |
 Aby funkcja renderująca dane poprawnie przekazywała je jako czytelne dane wyjściowe serwera, musi on zostać zapisany jako część obiektu *output*. Wystarczy przypisać go do *output* pod konkretną nazwą (id), np. "*output$Plot*".
 
 |
-Zapisane dane wejściowe mogą mieć różne formaty, o czym należy pamiętać podczas pisania kodu serwera. Zwykle dane wejściowe to dane liczbowe (np. *1*) lub tekstowe (np. *"1"*) i są definiowane podczas tworzenia widżetu. Widżety mogą jednak używać także innych formatów danych, takich jak tabele, obrazy z geometrię 2/3D.
+Zapisane dane wejściowe mogą mieć różne formaty, o czym należy pamiętać podczas pisania kodu serwera. Zwykle dane wejściowe to dane liczbowe (np. *1*) lub tekstowe (np. *"1"*) i są definiowane podczas tworzenia widżetu. Widżety mogą jednak używać także innych formatów danych, takich jak tabele czy obrazy z geometrią 2/3D.
 
 \pagebreak
 \begin{center}
@@ -496,7 +497,7 @@ Zapisane dane wejściowe mogą mieć różne formaty, o czym należy pamiętać 
 |
 Jak to działa w przypadku całego kodu?
 
-Załóżmy, że chcemy wyrenderować prosty histogram na podstawie dowolnego pomiaru wybranego przez użytkownika spośród wszystkich dostępnych w zestawie danych Iris (patrz kod poniżej). Najpierw tworzymy widżet pozwalajcy na wybór tego pomiaru. *Measurements* zapisuje wybór użytkownika jako dane tekstowe i przekazuje je do obiektu wejściowego w takiej formie. Po stronie serwera używamy *renderPlot()*, aby przechwycić histogram wygenerowany przez funkcję *ggplot()*, i zapisujemy jako *output$resultPlot*. W równaniu *ggplot()* używamy bazy danych *iris*, a oczekiwaną geometrię do wygenerowania zapewnia *geom_histogram()*. W *aes()* jako x wstawiamy *iris[[input$Measurements]]* - inaczej mówiąc, wybieramy kolumnę o nazwie *input$Measurements*. Jako, że dane wejściowe są zdefiniowane jako tekst, tak napisany kod powinien pozwolić na wybranie kolumny z bazy danych o pożądanej nazwie.
+Załóżmy, że chcemy wyrenderować prosty histogram na podstawie dowolnego pomiaru wybranego przez użytkownika spośród wszystkich dostępnych w zestawie danych Iris (patrz kod poniżej). Najpierw tworzymy widżet pozwalający na wybór tego pomiaru. *Measurements* zapisuje wybór użytkownika jako dane tekstowe i w takiej formie przekazuje je do obiektu, gdzie dane wejściowe są przechowywane. Po stronie serwera używamy *renderPlot()*, aby przechwycić histogram wygenerowany przez funkcję *ggplot()*, i zapisujemy jako *output$resultPlot*. W równaniu *ggplot()* używamy bazy danych *iris*, a oczekiwaną geometrię do wygenerowania zapewnia *geom_histogram()*. W *aes()* jako x wstawiamy *iris[[input$Measurements]]* - inaczej mówiąc, wybieramy kolumnę o nazwie *input$Measurements*. Jako, że dane wejściowe są zdefiniowane jako tekst, tak napisany kod powinien pozwolić na wybranie z bazy danych kolumny o pożądanej nazwie. 
 
 |
 ```{r eval=FALSE, echo=TRUE}
@@ -535,9 +536,9 @@ Załóżmy, że chcemy wyrenderować prosty histogram na podstawie dowolnego pom
 \end{center}
 
 | 
-Co zrobić, jeśli serwer musi przekazywać informacje wewnątrz siebie?
+Co zrobić, jeśli serwer ma przekazywać informacje wewnątrz siebie?
 
-Jednym z kluczowych punktów dobrych praktyk w kodowaniu jest ograniczenie do minimum powtarzalność kodu. Po co powtarzać te same kalkulacje, dodatkowo obciążając program zbędnymi danymi, jeżeli można tylko raz wykalkulować potrzebne dane i użyć ich tam, gdzie są potrzebne? W R nie stanowi to dużego problem, ale w architekturze serwerowej aplikacji Shiny jest do tego potrzebna oddzielna funkcja, zwana *reactive()*. Tworzy ona obiekt do wykorzystania tylko w obrębie serwera, możliwy do użycia tak wewnątrz funkcji renderujących specyficzne wyniki jak i w innych reaktywnych elementach kodu. Podobnie jak w niektórych innych funkcjach, kod, który ma zostać obliczony, umieszczamy w nawiasach {}, np. *reactive({/kod_tutaj/})*.
+Kluczową praktyką w kodowaniu jest ograniczenie do minimum powtarzalności kodu. Po co powtarzać te same kalkulacje, dodatkowo obciążając program zbędnymi danymi, jeżeli można tylko raz wykalkulować dane i użyć ich tam, gdzie są potrzebne? W R nie stanowi to dużego problemu, ale w architekturze serwerowej aplikacji Shiny jest do tego potrzebna oddzielna funkcja, zwana *reactive()*. Tworzy ona obiekt do wykorzystania tylko w obrębie serwera, możliwy do użycia tak wewnątrz funkcji renderujących specyficzne wyniki, jak i w innych reaktywnych elementach kodu. Podobnie jak w niektórych innych funkcjach, kod, który ma zostać obliczony, umieszczamy w nawiasach {}, np. *reactive({/kod_tutaj/})*.
 
 
 ```{r eval=FALSE, echo=TRUE}
@@ -570,7 +571,7 @@ Jednym z kluczowych punktów dobrych praktyk w kodowaniu jest ograniczenie do mi
              )) + geom_histogram()            
     )  
     output$resultPrint <- renderPrint( 
-      {summary(dataReactive())}          #Ponowne wywołanie obiektu reaktywnego
+      {summary(dataReactive())}       #Ponowne wywołanie obiektu reaktywnego
     )}
 ```
 
@@ -587,7 +588,7 @@ Jednym z kluczowych punktów dobrych praktyk w kodowaniu jest ograniczenie do mi
 Wyświetlanie danych wyjściowych w interfejsie użytkownika jest prawdopodobnie najłatwiejszą częścią tworzenia aplikacji poprzez bibliotekę Shiny.
 
 
-Podobnie jak w przypadku renderowania wyników po stronie serwera, wyświetlanie ich jako części interfejsu użytkownika wymaga dedykowanych funkcji. *plotOutput()* służy do wyświetlania wykresów, *tableOutput()* i *dataTableOutput()* są używane do wyświetlania tabel (przy czym druga zapewnia większą interaktywność), *textOutput()* i *verbatimTextOutput()* wyświetlają tekst, *htmlOutput()* i *uiOutput()* wyświetlają kod HTML, *imageOutput()* wyświetla obrazy. Te funkcje muszą tylko mieć podaną nazwę danych wyjściowych do wyświetlenia zdefiniowaną w (). Po zagnieżdżeniu w elementach układu UI i przypisaniu danych wyjściowych funkcje powinny działać zgodnie z oczekiwaniami po uruchomieniu aplikacji.
+Podobnie jak w przypadku renderowania wyników po stronie serwera, wyświetlanie ich jako części interfejsu użytkownika wymaga dedykowanych funkcji. *plotOutput()* służy do wyświetlania wykresów, *tableOutput()* i *dataTableOutput()* są używane do wyświetlania tabel (przy czym druga zapewnia większą interaktywność), *textOutput()* i *verbatimTextOutput()* wyświetlają tekst, *htmlOutput()* i *uiOutput()* wyświetlają kod HTML, *imageOutput()* wyświetla obrazy. Te funkcje muszą mieć podaną nazwę danych wyjściowych do wyświetlenia, zdefiniowaną w nawiasach. Po zagnieżdżeniu w elementach układu UI, przypisaniu danych wyjściowych i uruchomieniu aplikacji funkcje powinny działać zgodnie z oczekiwaniami.
 
 | 
 ```{r eval=FALSE, echo=TRUE}
@@ -622,24 +623,24 @@ Podobnie jak w przypadku renderowania wyników po stronie serwera, wyświetlanie
 
 |
 | 
-Jak więc wygląda ostateczna aplikacja, gdy połączymy wszystkie jej elementy w funkcjonalną całość? I jak wygląda proces projektowania aplikacji, od ogólnego pomysłu po szczegółowy plan??
+Jak wygląda ostateczna aplikacja, gdy połączymy wszystkie jej elementy w funkcjonalną całość? I jak przebiega proces projektowania aplikacji, od ogólnego pomysłu po szczegółowy plan?
 
-Przykładowy kod aplikacji można znaleźć spisany tutaj, po wyjaśnieniu, a także załadować poprzez aplikację z RStudio, wpisując *shiny::runGitHub("ShinyTutorial","DCS-training", ref = "main", subdir = " appexample")* w konsoli.
+Przykładowy kod aplikacji można znaleźć spisany poniżej, pod koniec rozdziału, a także załadować do RStudio ze strony Github, wpisując *shiny::runGitHub("ShinySamouczek", "AndrzejRomaniuk", ref = "main", subdir = "appexample")* w konsoli.
 
 |
 |
 *Aplikacja do eksploracji danych z bazy Iris: pomysł, układ i wykonanie*
 
 |
-Główną ideą za napisaniem tej aplikacji była potrzeba zbadania rozkładu danych w przykładowej baize danych, przy jednoczesnej kontroli and tym, jakie dane będą uwzględnione I w jaki sposób będą podane wyniki.
+Napisaniu tej aplikacji przyświecała potrzeba zbadania rozkładu danych w przykładowej bazie danych, przy jednoczesnej kontroli and tym, jakie dane będą uwzględnione i w jaki sposób będą podane wyniki.
 
 Ale jak to osiągnąć? Wszystkie wymiary podane są w cm z jedną wartością dziesiętną. Wizualnie analizę można najprościej przeprowadzić tworząc histogram, używając do tego celu bibliotekę *ggplot*. Z kolei podstawowe statystyki opisowe dla danych liczbowych można łatwo uzyskać za pomocą funkcji *summary()*. Co więcej, korzystne byłoby również wyświetlenie przy okazji tabeli danych ze wszystkimi aktualnie używanymi pomiarami. W takim przypadku możemy użyć biblioteki *DT*, aby uzyskać interaktywną tabelę danych zawierającą podstawowe funkcje sortowania.
 
 Gdy już wiemy, co chcemy zrobić, czas przejść do projektowania układu interfejsu użytkownika. Biorąc pod uwagę, że cel aplikacji jest stosunkowo prosty, standardowy układ paska bocznego wydaje się więcej niż wystarczający. Wszystkie widżety można zebrać w panelu bocznym, a wyniki można wyświetlić w panelu głównym. Aby upewnić się, że mamy wystarczająco dużo miejsca w panelu głównym, możemy dołączyć funkcję *tabsetPanel()* z kilkoma panelami zakładek dla danych wyjściowych. Zdefiniowane zakładki to „Wykres” dla histogramu, „Podsumowanie” dla statystyk opisowych, „Tabela” dla tabeli z aktualnie używanymi pomiarami i być może „O aplikacji”, aby zapisać wszelkie informacje przydatne dla użytkownika. Aby uzyskać nieco inne wrażenia estetyczne, możemy zagnieździć *shinytheme("yeti")* w *fluidPage()*.
 
-Następnie widżety. Należy je umieścić w panelu bocznym i uporządkować według malejącego znaczenia. Kluczową kwestią, wyborem pomiaru do zbadania, może zająć się widżet *selectInput()*. Cztery pomiary, jako cztery dostępne odpowiedzi przez ten widżet, byłyby dostępne jako pierwszy możliwy wybór w panelu bocznym. Kolejną kwestią byłoby, które gatunki należy uwzględnić by analizie pomiarów. Można to rozwiązać za pomocą funkcji *checkboxGroupInput()*, definiując pole wyboru dla każdego możliwego gatunku. Jeśli jednak się nad tym zastanowimy, jeśli będziemy badać pomiary więcej niż jednego gatunku, możemy albo analizować wszystkie jako jedną grupę, albo jako osobne grupy. Tak więc poniżej pól wyboru gatunków może pojawić się inne, warunkowe pole wyboru (i.e. zagnieżdżone w *conditonalPanel()*), używające widżetu *checkboxInput()* i pojawiąjące się, jeśli użytkownik zaznaczył więcej niż jeden gatunek. Domyślnie wszystkie gatunki byłyby analizowane łącznie, ale wyskakujące okienko może być odznaczone by analizować oddzielnie. Ponieważ czytelność wykresu histogramu zależy od użytego rozmiaru kosza (i.e. słupków z którego się składa histogram), a pomiary z bazy danych różnią się na tyle, że jeden rozmiar może nie być wystarczającym źródłem informacji we wszystkich przypadkach, jako ostatni widget możemy dodać suwak wejściowy *sliderInput()*. Byłby użyty by dostosować rozmiary koszy. W uzyskanych danych wejściowych dwa byłyby danymi tekstowymi (pomiary i gatunki), jeden byłby wartością logiczną (wyskakujące pole wyboru), a ostatni dyskutowany wartością liczbową (suwak rozmiaru kosza).
+Następnie widżety. Należy je umieścić w panelu bocznym i uporządkować według malejącego znaczenia. Kluczową kwestią, wyborem pomiaru do zbadania, może zająć się widżet *selectInput()*. Cztery pomiary, jako cztery dostępne odpowiedzi przez ten widżet, byłyby  pierwszym możliwym wyborem w panelu bocznym. Kolejną kwestią będzie, które gatunki należy uwzględnić przy analizie pomiarów. Można to rozwiązać za pomocą funkcji *checkboxGroupInput()*, definiując pole wyboru dla każdego możliwego gatunku. Jeśli jednak się nad tym zastanowimy, jeśli będziemy badać pomiary więcej niż jednego gatunku, możemy albo analizować wszystkie jako jedną grupę, albo jako osobne grupy. Tak więc poniżej pól wyboru gatunków może pojawić się inne, warunkowe pole wyboru (i.e. zagnieżdżone w *conditonalPanel()*), używające widżetu *checkboxInput()* i pojawiąjące się, jeśli użytkownik zaznaczył więcej niż jeden gatunek. Domyślnie wszystkie gatunki byłyby analizowane łącznie, ale wyskakujące okienko może zostać odznaczone, by analizować je oddzielnie. Ponieważ czytelność wykresu histogramu zależy od użytego rozmiaru kosza (np. słupków z którego się składa histogram), a pomiary z bazy danych różnią się na tyle, że jeden rozmiar może nie być wystarczającym źródłem informacji we wszystkich przypadkach, jako ostatni widget możemy dodać suwak wejściowy *sliderInput()*. Byłby on użyty, by dostosować rozmiary koszy. W uzyskanych zestawach danych wejściowych dwa byłyby danymi tekstowymi (pomiary i gatunki), jeden byłby wartością logiczną (wybór z pola wyboru), a ostatni dyskutowany wartością liczbową (rozmiar kosza).
 
-Strona serwerowa tej aplikacji powinna zawierać trzy opcje renderowania (wykres, statystyka opisowa i tabela). We wszystkich trzech przypadkach wykorzystywana byłyby te same dane, co oznacza, że należy je zdefiniować jako oddzielny podzbiór by uniknąć powtarzania kodu, za pomocą funkcji *reactive()*. Wewnątrz funkcji trzeba byłoby zdefiniować podzbiór z generalnego zbioru Iris poprzez funkcję *subset()* oraz dane wejściowe związane wybranymi z pomiarami i gatunkami. Dane zapisane ostatecznie jako *dataReactive()* mogą być dalej przekazane do funkcji renderujących histogram (*renderPlot()*), statystyki opisowe (*renderPrint()*) lub bezpośrednio jako dane wyjściowe ((*renderDataTable()*). Podczas definiowania histogramu w *renderPlot()* użyte byłyby także dane wejściowe dotyczące rozmiaru kosza jak i ewentualnego wyboru, w jaki sposób analizować wiele gatunków. W przypadku *renderPrint()*, oprócz *dataReactive()*, używalibyśmy tylko wyboru dotyczącego gatunków. Po zakończeniu renderowania, dane wyjściowe są wyświetlane w predefiniowanych zakładkach graficznego interfejsu.
+Strona serwerowa tej aplikacji powinna zawierać trzy opcje renderowania (wykres, statystyka opisowa i tabela). We wszystkich trzech przypadkach wykorzystywane byłyby te same dane, co oznacza, że należy je zdefiniować jako oddzielny podzbiór, by uniknąć powtarzania kodu, za pomocą funkcji *reactive()*. Wewnątrz funkcji trzeba byłoby zdefiniować podzbiór z generalnego zbioru Iris poprzez funkcję *subset()* oraz dane wejściowe związane z wybranymi  pomiarami i gatunkami. Dane zapisane ostatecznie jako *dataReactive()* mogą być dalej przekazane do funkcji renderujących histogram (*renderPlot()*), statystyki opisowe (*renderPrint()*) lub bezpośrednio jako dane wyjściowe ((*renderDataTable()*). Podczas definiowania histogramu w *renderPlot()* użyte byłyby także dane wejściowe dotyczące rozmiaru kosza jak i ewentualnego wyboru, w jaki sposób analizować wiele gatunków. W przypadku *renderPrint()*, oprócz *dataReactive()*, używalibyśmy tylko wyboru dotyczącego gatunków. Po zakończeniu renderowania, dane wyjściowe są wyświetlane w predefiniowanych zakładkach graficznego interfejsu.
 
 |
 |
@@ -832,7 +833,7 @@ shinyApp(ui = ui, server = server)
 
 |
 | 
-Więc napisałeś aplikację, co teraz? Cóż, aplikację Shiny można udostępniać (*wdrażać*) albo jako nieskompilowany kod w R, lub jako skompilowaną, właściwą aplikację internetową. W pierwszym przypadku po prostu udostępniamy możliwość pobrania skryptu R i powiązanych danych. W takim wypadku użytkownik musi mieć zainstalowane RStudio i wszystkie wymagane biblioteki, aby uruchomić aplikację lokalnie. W drugim przypadku najpierw kompilujemy aplikację, wraz ze wszystkimi zależnościami (wymaganymi plikami i danymi),  w samowystarczalny program, udostępniany potem na serwerze online. Aplikacja działa w pełni na tym serwerze (i.e. wszystkie kalkulacje), a użytkownik potrzebuje tylko adresu URL, aby uzyskać do niej dostęp.
+Napisałeś aplikację, co teraz? Cóż, aplikację Shiny można udostępniać (*wdrażać*) albo jako nieskompilowany kod w R, albo jako skompilowaną, właściwą aplikację internetową. W pierwszym przypadku po prostu udostępniamy możliwość pobrania skryptu R i powiązanych danych. Użytkownik musi mieć zainstalowane RStudio i wszystkie wymagane biblioteki, aby uruchomić aplikację lokalnie. W drugim przypadku kompilujemy aplikację, wraz ze wszystkimi zależnościami (wymaganymi plikami i danymi),  w samowystarczalny program, udostępniany potem na serwerze online. Aplikacja działa w pełni na tym serwerze (np. wszystkie kalkulacje), a użytkownik potrzebuje tylko adresu URL, aby uzyskać do niej dostęp.
 
 | 
 Ponieważ istnieje wiele sposobów na udostępnianie aplikacji, wskażemy tutaj dwa najczęściej używane podejścia: przez [GitHub](https://github.com/) lub [Shinyapps.io](https://www.shinyapps.io/). Jeśli ktoś jest zainteresowany uruchomieniem własnego serwera, jest to możliwe poprzez dedykowany pakiet  *Shiny Server* (do pobrania [tutaj](https://www.rstudio.com/products/shiny/shiny-server/)). Inne alternatywy wdrażania są dostępne w [*The Shiny AWS Book*](https://business-science.github.io/shiny-production-with-aws-book/).
@@ -846,8 +847,7 @@ knitr::include_graphics("visual/GitHubRep.jpg")
 *Przykład 1: GitHub*
 
 | 
-[GitHub](https://github.com/) (patrz wyżej) to bezpłatne repozytorium, używane głównie przez programistów do przechowywania, udostępniania i zarządzania napisanym, często nieskompilowanym, kodem (aplikacjami, ale nie tylko) oraz powiązanymi plikami.
-Po utworzeniu konta możesz utworzyć repozytorium  ([zobacz jak, krok po kroku, tutaj](https://docs.github.com/en/get-started/quickstart/create-a-repo)), nazwać jak chcesz, udostępnić publicznie (by było widoczne dla osób innych niż ty) i wgrać wszystkie potrzebne pliki (w tym wypadku plik lub pliki R z aplikają i wszystkie zależoności, np. bazy danych bądź pliki graficzne). Każda osoba z RStudio i dostępem do internetu może wczytać aplikację w R bezpośrednio ze strony GitHub używając funkcji *runGitHub()*. Funkcja ta potrzebuje tylko nazwy rezpozytorium, nazwy użytkownika i ewentualnie folderu do którego musi wejść w tym rezpozytorium (zwykle nazwanego "main"):*runGitHub("nazwa_repozytorium","nazwa_użytkownika", ref="main")*. Jedynym warunkiem jest, by plik R z kodem aplikacji był nazwany *app.R*.
+[GitHub](https://github.com/) (patrz wyżej) to bezpłatne repozytorium, używane głównie przez programistów do przechowywania, udostępniania i zarządzania napisanym, często nieskompilowanym, kodem (aplikacjami, ale nie tylko) oraz powiązanymi plikami. Po utworzeniu konta możesz założyć repozytorium  ([zobacz jak, krok po kroku, tutaj](https://docs.github.com/en/get-started/quickstart/create-a-repo)), nazwać jak chcesz, udostępnić publicznie (by było widoczne dla osób innych niż ty) i wgrać wszystkie potrzebne pliki (w tym wypadku plik lub pliki R z aplikacją i wszystkie zależności, np. bazy danych bądź pliki graficzne). Każda osoba z RStudio i dostępem do internetu może wczytać aplikację w R bezpośrednio ze strony GitHub używając funkcji *runGitHub()*. Funkcja ta potrzebuje tylko nazwy repozytorium, nazwy użytkownika i ewentualnie folderu do którego musi wejść w tym repozytorium (zwykle nazwanego "main"):*runGitHub("nazwa_repozytorium","nazwa_użytkownika", ref="main")*. Jedynym warunkiem jest, by plik R z kodem aplikacji był nazwany *app.R*.
 
 | 
 | 
@@ -861,7 +861,7 @@ knitr::include_graphics("visual/Shinyapp.jpg")
 | 
 [Shinyapps.io](https://www.shinyapps.io/) to serwer dedykowany specjalnie do hostowania skompilowanych aplikacji Shiny. Darmowe konto jest stosunkowo restrykcyjne (tylko 25 godzin aktywnego użytkowania), ale jest dobrym punktem wyjścia dla początkujących programistów. Po stronie RStudio należy zainstalować bibliotekę *rsconnect*, a RStudio później skonfigurować do łączenia się z kontem *Shinyapps*. Po konfiguracji nowo utworzone aplikacje można łatwo skompilować i przesłać na swerwer *Shinyapps.io* poprzez przycisk *Opublikuj aplikację lub dokument*. Dalsze wdrażanie aplikacji (np. przypisanie unikatowego adresu URL) można konfigurować bezpośrednio z interfejsu użytkownika *Shinyapps.io*. Szczegółowy przewodnik publikowania w ten sposób, krok po kroku, dostępny jest [tutaj](https://shiny.rstudio.com/articles/shinyapps.html).
 | 
-Warto zauważyć, że skompilowane zależności obejmują również biblioteki. Może to spowodować, że ostateczna aplikacja będzie dość ciężka, jeśli użyjesz funkcji z wielu lub większych bibliotek. Jeśli używasz tylko jednej funkcji z określonego pakietu, może być lepiej użyć *::* by załadować indywidualną funkcję niż wczytywać całą bibliotekę przez *library()*.
+Warto zauważyć, że skompilowane zależności obejmują również biblioteki. Może to spowodować, że ostateczna aplikacja będzie dość ciężka, jeśli użyjesz funkcji z wielu lub większych bibliotek. Jeśli używasz tylko jednej funkcji z określonej biblioteki, lepiej użyć *::* by załadować indywidualną funkcję niż wczytywać całą bibliotekę poprzez *library()*.
 
 \pagebreak
 \begin{center}
@@ -873,7 +873,7 @@ Warto zauważyć, że skompilowane zależności obejmują również biblioteki. 
 | 
 | 
 
-Jeżeli przeszedłeś przez cały samouczek i chcesz teraz wykorzystać nowo nabyte umiejętności w praktyce, sugeruję najpierw zacząć od pisania małych, łatwo zrozumiałych aplikacji. Dobrym punktem wyjścia może być próba odtworzenia analizy, którą już kiedyś zrobiłeś, jako aplikacji internetowej, lub interaktywnej wizualizacji zbioru danych, który dobrze już znasz. 
+Jeżeli przeszedłeś przez cały samouczek i chcesz teraz wykorzystać nowo nabyte umiejętności w praktyce, sugeruję zacząć od pisania małych, łatwo zrozumiałych aplikacji. Dobrym punktem wyjścia może być próba odtworzenia analizy, którą już kiedyś zrobiłeś, jako aplikacji internetowej, lub stworzenie interaktywnej wizualizacji zbioru danych, który dobrze znasz. 
 
 Z czasem możesz przejść do dalszego zagłębiania wiedzy o możliwościach zawartych w bibliotekach Shiny oraz hostingu aplikacji online (zobacz następną stronę, zwłaszcza książki dostępne online, jak np. [*Mastering Shiny*](https://mastering-shiny.org/)) lub połączyć rozwiązania dostępne w Shiny z innymi rozwiązaniami dostępnymi *poprzez* RStudio (np. z RMarkdown, zobacz poniżej).
 
@@ -883,7 +883,7 @@ Z czasem możesz przejść do dalszego zagłębiania wiedzy o możliwościach za
 *Shiny i RMarkdown*
 
 | 
-Co zrobić, jeśli chcesz stworzyć prezentację z osadzoną aplikacją? A może całą witrynę,  zawierająca kilka różnych aplikacji? Jest to jak najbardziej możliwe dzięki połączeniu Shiny z biblioteką RMarkdown. Podobnie jak Shiny, RMarkdown jest zestawem rozwiązań, dodającym zupełnie nowe funkcjonalności do RStudio. W szczególności służy do tworzenia raportów, w postaci m.in. strony html, dokumentu pdf lub prezentacji. Samouczek został napisany i zakodowany w pliku pdf dzięki RMarkdown i rozszerzeniu MiKTeX (RMarkdown może poprosić o zainstalowanie rozszerzeń lub zapytać o konieczność ręcznej instalacji; nie martw się, nie jest to tak skomplikowane, jak się wydaje).
+Co zrobić, jeśli chcesz stworzyć prezentację z osadzoną aplikacją? A może całą witrynę,  zawierającą kilka różnych aplikacji? Jest to jak najbardziej możliwe dzięki połączeniu Shiny z biblioteką RMarkdown. Podobnie jak Shiny, RMarkdown jest zestawem rozwiązań, dodającym zupełnie nowe funkcjonalności do RStudio. W szczególności służy do tworzenia raportów w postaci m.in. strony html, dokumentu pdf lub prezentacji. Samouczek został napisany i zakodowany w pliku pdf dzięki RMarkdown i rozszerzeniu MiKTeX (RMarkdown może poprosić o zainstalowanie rozszerzeń lub zapytać o konieczność ręcznej instalacji; nie martw się, nie jest to tak skomplikowane, jak się wydaje).
 
 Kurs LinkedIn Learning o łączeniu RMarkdown z Shiny jest dostępny  [tutaj](https://www.linkedin.com/learning/creating-interactive-presentations-with-shiny-and-r/welcome?u=50251009), więcej informacji o możliwościach takiego połączenia oraz przydatnych linkach jest dostępnych  [tutaj](https://beta.rstudioconnect.com/content/2671/Combining-Shiny-R-Markdown.html#introduction). Warto również przeczytać więcej o roli RMarkdown w pisaniu naukowych raportów w [*R Markdown for Scientists*](https://rmd4sci.njtierney.com/index.html).
 
@@ -937,7 +937,7 @@ Kurs LinkedIn Learning o łączeniu RMarkdown z Shiny jest dostępny  [tutaj](ht
 
 |
 | 
-Ten poradnik został oryginalnie napisany w Październiku 2021 roku przez Andrzeja A. Romaniuka dla Centrum Danych, Kultury i Społeczeństwa Uniwersytetu w Edynburgu (*Centre for Data, Culture and Society, University of Edinburgh*). Oryginalny tytuł *Building interactive web applications in R using SHINY*. 
+Ten poradnik został napisany w Październiku 2021 roku przez Andrzeja A. Romaniuka dla Centrum Danych, Kultury i Społeczeństwa Uniwersytetu w Edynburgu (*Centre for Data, Culture and Society, University of Edinburgh*). Oryginalny tytuł *Building interactive web applications in R using SHINY*.  
 
 Tłumaczenie na Polski zostało wykonane przez tego samego autora, w Maju/Czerwcu 2022 roku, z myślą o warsztacie „Projektowanie prostych aplikacji w R przy użyciu SHINY”, zorganizowanym w ramach konferencji *CAA – Forum GIS UW 2022*. Tytuł warsztatu został ostatecznym tytułem tłumaczenia.
 
@@ -952,7 +952,7 @@ Oryginalny samouczek, w formacie PDF, jest dostępny poprzez własny link DOI ja
 [github.com/DCS-training/ShinyTutorial](https://github.com/DCS-training/ShinyTutorial)
 
 | 
-Wszystkie elementy niezbędne dla samouczka po Polsku, jak i przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  [github.com/DCS-training/ShinyTutorial](https://github.com/AndrzejRomaniuk/ShinySamouczek)
+Wszystkie elementy niezbędne dla samouczka po Polsku, jak i dla przykładowej aplikacji, w tym wygenerowania pliku PDF, są dostępne na stronie GitHub:  [github.com/DCS-training/ShinyTutorial](https://github.com/AndrzejRomaniuk/ShinySamouczek)
 
 | 
 | Andrzej A. Romaniuk
