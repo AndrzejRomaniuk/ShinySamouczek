@@ -85,7 +85,11 @@ ui <- fluidPage(
             of the data."),
           p(" "),
           p("To run this app from GitHub 
-            locally use the code below:"),
+            locally use either the code below (Eng, with Pl explanation):"),
+          code('shiny::runGitHub("ShinySamouczek","AndrzejRomaniuk", 
+               ref = "main", subdir = "appexample")'),
+          p(" "),
+          p("(Eng, original):"),
           code('shiny::runGitHub("ShinyTutorial","DCS-training", 
                ref = "main", subdir = "appexample")'),
           p(" "),
@@ -93,12 +97,16 @@ ui <- fluidPage(
           tags$a(href="https://shiny.rstudio.com/", 
                  "shiny.rstudio.com"),
           p(" "),
-          p("See the link below for the tutorial GitHub page"),
+          p("See the link below for the tutorial GitHub page (Pl)"),
+          tags$a(href="https://github.com/AndrzejRomaniuk/ShinySamouczek", 
+                 "github.com/AndrzejRomaniuk/ShinySamouczek"),
+          p(" "),          
+          p("(ENG)"),
           tags$a(href="https://github.com/DCS-training/ShinyTutorial", 
                  "github.com/DCS-training/ShinyTutorial"),
           p(" "),
-          p("App and related tutorial created fo CDCS UoE 
-            by Andrzej A. Romaniuk")
+          p("App and related tutorial originally created fo CDCS UoE 
+            by Andrzej A. Romaniuk, later translated for CAA Poland")
         )
       )
     )
