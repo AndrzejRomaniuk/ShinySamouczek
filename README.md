@@ -27,6 +27,7 @@ Naklejka z logo Shiny, prezentowana na pierwszej stronie, pobrana zostala z repo
      ├── README.md
      ├── visual
      │   ├── AppStructure.jpg
+     │   ├── CAAForum.jpg
      │   ├── Customization.jpg  
      │   ├── DCS.jpg   
      │   ├── Difference.jpg
