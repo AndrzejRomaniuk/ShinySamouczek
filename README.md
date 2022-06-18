@@ -53,7 +53,7 @@ Aby mieć dostęp do pliku Rmd lub uruchomić aplikację, musisz mieć zainstalo
 * RStudio można pobrać ze strony: https://rstudio.com/products/rstudio/download/#download
 
 Jeśli masz już zainstalowane R i RStudio:
-* Zainstaluj wymagane biblioteki ("shiny","shinythemes","DT","ggplot2"), aby móc uruchomić lub zmodyfikować plik aplikacji 
+* Zainstaluj wymagane biblioteki ("shiny","shinythemes","DT","ggplot2","rsconnect","shinyWidgets"), aby móc uruchomić lub zmodyfikować plik aplikacji 
 * Aby móc zmienić i/lub połączyć dokument Rmd w plik pdf, zainstaluj wymagane biblioteki ("rmarkdown","knitr") i dystrybucję TeX. Autor sugeruje albo TinyTeX
 lub MiKTeX. W razie potrzeby mogą być również potrzebne "devtools"
 * Pobierz pliki i foldery z repozytorium, upewnij się, że masz je wszystkie w jednym folderze
