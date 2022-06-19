@@ -42,11 +42,13 @@ Naklejka z logo Shiny, prezentowana na pierwszej stronie, pobrana zostala z repo
      │   ├── TabsetLayout.jpg
      │   ├── TextExamples.jpg
      │   └── UoELogo.png
-     └── appexample  
+     ├── appexample  
+     │   └── app.R
+     └── bonus 
          └── app.R
 ```
 
-sekcja main/ repozytorium zawiera (oprócz pliku README) Tutorial.Rmd z całym kodem niezbędnym do stworzenia tutoriala w pdf, już wygenerowany Tutorial.pdf oraz dwa foldery. Folder „visual” zawiera wszystkie figury używane przez Tutorial.Rmd. Folder „appexample” zawiera plik app.R, przykładową aplikację R utworzoną przy użyciu biblioteki Shiny.
+sekcja main/ repozytorium zawiera (oprócz pliku README) Tutorial.Rmd z całym kodem niezbędnym do stworzenia tutoriala w pdf, już wygenerowany Tutorial.pdf oraz dwa foldery. Folder „visual” zawiera wszystkie figury używane przez Tutorial.Rmd. Folder „appexample” zawiera plik app.R, przykładową aplikację R utworzoną przy użyciu biblioteki Shiny. Folder "bonus" z kolei zawiera aplikację podobną do tej przedstawionej w folderze "appexample", ale przebudowaną by pracować na dowolnej wgranej bazie danych, z wynikami możliwymi do ściągnięcia.
 
 ## Konfiguracja
 Aby mieć dostęp do pliku Rmd lub uruchomić aplikację, musisz mieć zainstalowane R i RStudio na swoim komputerze:
@@ -60,9 +62,10 @@ lub MiKTeX. W razie potrzeby mogą być również potrzebne "devtools"
 * Pobierz pliki i foldery z repozytorium, upewnij się, że masz je wszystkie w jednym folderze
 * Upewnij się, że katalog roboczy w RStudio jest taki sam jak folder, w którym zapisywane są dane (getwd() do sprawdzania katalogu, setwd() do ustawiania odpowiedniego katalogu)
 
-Alternatywnie, aby uruchomić aplikację za pomocą łącza:
+Alternatywnie, aby uruchomić aplikacje za pomocą łącza:
 * Zainstaluj wymagane biblioteki („shiny","shinythemes","DT","ggplot2")
-* W RStudio uruchom kod shiny::runGitHub("ShinySamouczek","AndrzejRomaniuk", ref = "main", subdir = "appexample")
+* Główna aplikacja - w RStudio uruchom kod shiny::runGitHub("ShinySamouczek","AndrzejRomaniuk", ref = "main", subdir = "appexample")
+* Bonusowa aplikacja - w RStudio uruchom kod shiny::runGitHub("ShinySamouczek","AndrzejRomaniuk", ref = "main", subdir = "bonus")
 
 ## O autorze
 Ten poradnik zostal oryginalnie napisany w Październiku 2021 roku przez Andrzeja A. Romaniuka dla Centrum Danych, Kultury i Spoleczenstwa Uniwersytetu w Edynburgu
