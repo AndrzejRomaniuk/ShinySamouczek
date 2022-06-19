@@ -97,6 +97,30 @@ ui <- fluidPage(
           "Summary",   
           verbatimTextOutput(            
             "resultPrint")                 
+        ),
+        tabPanel(
+          "About the app", 
+          strong("Example of a more complex Shiny app"),
+          p(" "),
+          p("This Shiny app was rewritten from a tutorial example,
+            to showcase some more complex possibilites that Shiny library enables,
+            including user data input and exporting output data."),
+          p(" "),
+          p("To run this app from GitHub 
+            locally use either the code below:"),
+          code('shiny::runGitHub("ShinySamouczek","AndrzejRomaniuk", 
+               ref = "main", subdir = "bonus")'),
+          p(" "),
+          p("See the link below for Shiny official page:"),
+          tags$a(href="https://shiny.rstudio.com/", 
+                 "shiny.rstudio.com"),
+          p(" "),
+          p("See the link below for the tutorial GitHub page (Pl)"),
+          tags$a(href="https://github.com/AndrzejRomaniuk/ShinySamouczek", 
+                 "github.com/AndrzejRomaniuk/ShinySamouczek"),
+          p(" "),
+          p("App and related tutorial originally created fo CDCS UoE 
+            by Andrzej A. Romaniuk, later translated for CAA Poland")
         )
       )
     )
@@ -104,9 +128,6 @@ ui <- fluidPage(
   )
 )
 
-#Część serwerowa aplikacji (zawierąca kod odpowiedzialny za właściwą analizę
-#danych, na bazie danych wejsciowych od użytkownika; wyniki zapisane jako dane
-#wyjściowe)
 server <- function(input,output) {
   
   dataReactive <- reactive({               
@@ -239,5 +260,4 @@ Summary <- reactive({
   )    
 }
 
-#shinyApp() ostatecznie laczy dwie strony aplikacji w funkjonalna calosc
 shinyApp(ui = ui, server = server)
