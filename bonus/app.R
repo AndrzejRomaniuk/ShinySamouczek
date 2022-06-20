@@ -49,9 +49,9 @@ ui <- fluidPage(
       ),
       conditionalPanel( 
         condition = (        
-          "input.BinsHow==0"), 
+          "input.BinsHow == 0"), 
               sliderInput(                        
-        inputId = "BinSize",          
+        inputId = "BinSize1",          
         label = h4("Bin size"),
         min = 0.1,
         max = 1,
@@ -60,9 +60,9 @@ ui <- fluidPage(
         ),
       conditionalPanel( 
         condition = (        
-          "input.BinsHow==1"), 
+          "input.BinsHow == 1"), 
         numericInput(                        
-          inputId = "BinSize",          
+          inputId = "BinSize2",          
           label = h4("Bin size"),
           min = 1,
           max = 1000,
@@ -180,7 +180,13 @@ server <- function(input,output) {
             fill = dataReactive2()[,1])      
       ) +                                    
         geom_histogram(                         
-          binwidth = input$BinSize,          
+          binwidth = 
+            if (input$BinsHow == 0) {
+             input$BinSize1 
+            } else if (input$BinsHow == 1) {
+              input$BinSize2  
+            }
+            ,          
           boundary = 0,                      
           colour="black"
         ) + 
@@ -197,7 +203,7 @@ server <- function(input,output) {
   )                                                                       
   
 
-Summary <- reactive({
+SummaryData <- reactive({
     if (is.null(dataReactive2())){         
       return(NULL)                        
       
@@ -226,7 +232,7 @@ Summary <- reactive({
   
   
   output$resultPrint <- renderPrint(       
-    Summary()
+    SummaryData()
   )                                   
   
   output$inputTable <- renderDataTable(  
@@ -246,7 +252,7 @@ Summary <- reactive({
       paste("results.txt")
     },
     content = function(file) {
-      writeLines(paste(capture.output( {Summary()} )), file)                                                                 
+      writeLines(paste(capture.output( {SummaryData()} )), file)                                                                 
     }
   )
   
