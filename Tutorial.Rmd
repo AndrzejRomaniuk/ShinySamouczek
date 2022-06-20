@@ -382,7 +382,7 @@ knitr::include_graphics("visual/InputWidgets.jpg")
 ```
 
 |
-Widżety to zasadniczo elementy interaktywne każdej aplikacji, takie jak np. okienka czy przyciski. W przypadku Shiny, nazwa odnosi się specyficznie do elementów uzyskujących danej wejściowe od użytkownika. Mogą to być przyciski, suwaki czy pola wyboru, ale także pola do wpisania odpowiedzi użytkownika, a nawet wgrania własnych dokumentów. Lista podstawowych widżetów dostępna jest [tutaj] (https://shiny.rstudio.com/gallery/widget-gallery.html), wraz z powiązanym kodem [tutaj] (https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/). Lista niestandardowych widżetów z biblioteki *shinyWidgets* jest dostępna [tutaj] (http://shinyapps.dreamrs.fr/shinyWidgets/).
+Widżety to zasadniczo elementy interaktywne każdej aplikacji, takie jak np. okienka czy przyciski. W przypadku Shiny, nazwa odnosi się specyficznie do elementów uzyskujących danej wejściowe od użytkownika. Mogą to być przyciski, suwaki czy pola wyboru, ale także pola do wpisania odpowiedzi użytkownika, a nawet wgrania własnych dokumentów. Lista podstawowych widżetów dostępna jest [tutaj](https://shiny.rstudio.com/gallery/widget-gallery.html), wraz z powiązanym kodem [tutaj](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/). Lista niestandardowych widżetów z biblioteki *shinyWidgets* jest dostępna [tutaj](http://shinyapps.dreamrs.fr/shinyWidgets/).
 
 O ile możliwe argumenty do zdefiniowania różnią się między dostępnymi widżetami, wszystkie zaczynają się od argumentu określającego nazwę obiektu, który będzie przechowywał dane wejściowe (w przypadku funkcji bibliotecznych Shiny pod nazwą *inputId*), z możliwością zdefiniowania wyświetlanej nazwy widżetu pod argumentem *label*. W przypadku niektórych widżetów do poprawnego działania wystarczy zdefiniowanie tylko tych dwóch argumentów (np. *textInput*), podczas gdy inne wymagają dodatkowych informacji, na przykład dostępnych opcji lub wstępnie wybranej/domyślnej odpowiedzi (zwykle *value* lub *selected*).
 
@@ -448,7 +448,7 @@ Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią okr
             "Choice 2" = 2), 
           selected = 1)              
       ,  
-      conditionalPanel(               #Panel warunkowy
+      conditionalPanel(              #Panel warunkowy
           conditon = (               #Ustalenie warunku dla którego
             "input.InputName = 2"    #pojawia się dodatkowy widżet
             ),                       
