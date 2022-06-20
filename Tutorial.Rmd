@@ -448,7 +448,7 @@ Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią okr
             "Choice 2" = 2), 
           selected = 1)              
       ,  
-      conditonalPanel(               #Panel warunkowy
+      conditionalPanel(               #Panel warunkowy
           conditon = (               #Ustalenie warunku dla którego
             "input.InputName = 2"    #pojawia się dodatkowy widżet
             ),                       
