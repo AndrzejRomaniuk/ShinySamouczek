@@ -432,7 +432,7 @@ Dobrą praktyką przy dodawaniu widżetów i definiowaniu ich parametrów jest r
 | 
 Co zrobić, jeśli jakiś widżet jest potrzebny tylko w przypadku specyficznego wyboru w innym widżetcie?
 
-Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią określone warunki, możesz użyć funkcji *conditionalPanel()* do ustalenia panelu warunkowego. Dwa kluczowe argumenty do uwzględnienia to *warunek*, przy którym pojawi się dodatkowy widżet, oraz sam widżet. Na przykład *conditon = ("input.InputName = 2")* mówi nam, że obiekt z określonymi danymi uzyskanymi od użytkownika (nazwane *InputName*) musi musi równać się numerycznej 2, by dodatkowy widżet się  pojawił. Należy jednak pamiętać, że warunki są oceniane zgodnie z kodowaniem JavaScript, a nie R (np. *=* jako znak równości, kiedy *==* jest domyśnym znakiem tego typu w R). Dlatego też warunek pojawia się w cudzysłowiu.
+Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią określone warunki, możesz użyć funkcji *conditionalPanel()* do ustalenia panelu warunkowego. Dwa kluczowe argumenty do uwzględnienia to warunek (*condition*), przy którym pojawi się dodatkowy widżet, oraz sam widżet. Na przykład *condition = ("input.InputName = 2")* mówi nam, że obiekt z określonymi danymi uzyskanymi od użytkownika (nazwane *InputName*) musi musi równać się numerycznej 2, by dodatkowy widżet się  pojawił. Należy jednak pamiętać, że warunki są oceniane zgodnie z kodowaniem JavaScript, a nie R (np. *=* jako znak równości, kiedy *==* jest domyśnym znakiem tego typu w R). Dlatego też warunek pojawia się w cudzysłowiu.
 
 | 
 ```{r eval=FALSE, echo=TRUE}
@@ -449,7 +449,7 @@ Jeśli chcesz, aby niektóre opcje pozostały ukryte, dopóki nie wystąpią okr
           selected = 1)              
       ,  
       conditionalPanel(              #Panel warunkowy
-          conditon = (               #Ustalenie warunku dla którego
+          condition = (              #Ustalenie warunku dla którego
             "input.InputName = 2"    #pojawia się dodatkowy widżet
             ),                       
           sliderInput(               #Widżet pojawi się w panelu bocznym     
